@@ -36,12 +36,15 @@ class FannyPack{
         echo "status of zipper is open <br>";
       }
       echo "Zipper is Open you can " , $action , " something <br>";
+
       $this->closeZipper();
        if($this->isZipperOpen == false){
         echo "status of zipper is close";
       }
+
       return;
     }
+    
     echo "you can only take something or put something";
       return;
   }
