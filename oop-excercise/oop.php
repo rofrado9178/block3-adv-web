@@ -6,7 +6,7 @@ class FannyPack{
   private $price;
   private $isZipperOpen = false;
 
-  function __construct($color, $pocket, $price )
+  public function __construct($color, $pocket, $price )
   {
     $this->color = $color;
     $this->pocket = $pocket;
@@ -14,19 +14,19 @@ class FannyPack{
 
   }
 
-  function getDescription(){
+  public function getDescription(){
     return "Fanny Pack color is ". $this->color. " with ". $this->pocket." pockets and the price is $ ". $this->price; 
   }
 
-  function openZipper(){
+  private function openZipper(){
     $this->isZipperOpen = true;
   }
 
-   function closeZipper(){
+  private function closeZipper(){
     $this->isZipperOpen = false;
   }
 
-  function action($action){
+  public function action($action){
     if(!$this->isZipperOpen){
         $this->openZipper();
       }
