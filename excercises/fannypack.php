@@ -5,6 +5,7 @@ class FannyPack{
   private $pocket;
   private $price;
   private $isZipperOpen = false;
+  private $zipperPosition = "right";
 
   public function __construct($color, $pocket, $price )
   {
@@ -19,11 +20,30 @@ class FannyPack{
   }
 
   private function openZipper(){
-    $this->isZipperOpen = true;
+    if($this->zipperPosition != "left"){
+      echo "zipper current position is to the ", $this->zipperPosition , "<br>";
+      $this->isZipperOpen = true;
+      $this->zipperPosition = "left";
+      echo "Turn zipper to the left <br>";
+      echo "zipper current position is to the ", $this->zipperPosition , "<br>";
+      return;
+    }
+    echo "Bag is already opened";
+    return;
   }
 
   private function closeZipper(){
-    $this->isZipperOpen = false;
+    if($this->zipperPosition != "right"){
+       echo "zipper current position is to the ", $this->zipperPosition , "<br>";
+       $this->isZipperOpen = false;
+       $this->zipperPosition = "right";
+       echo "Turn zipper to the right <br>";
+       echo "zipper current position is to the ", $this->zipperPosition , "<br>";
+       return;
+    }
+    echo "Bag is already closed";
+    return;
+   
   }
 
   public function action($action){
@@ -55,7 +75,7 @@ $redFannyPack = new FannyPack("white", 3, 20);
 echo $redFannyPack->getDescription();
 
 echo "<br>";
-$redFannyPack->action("put");
+echo $redFannyPack->action("put");
 
 
 
