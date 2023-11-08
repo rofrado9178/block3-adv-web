@@ -1,4 +1,4 @@
-Excercise 1 - Appointments
+Excercise 1 - Appointment
 
 Patient Table
 | id | name |
