@@ -49,20 +49,59 @@ class Shape{
   }
 
   public function getArea(){
-    echo "$this->width, $this->length";
+    echo $this->width, $this->length;
   }
 }
 
 class Rectangle extends Shape{
   public function getArea(){
-    echo $this->width * $this->length;
+    echo $this->width * $this->length, "<br>";
   }
 }
 
 $coolRectangle = new Rectangle(5,5);
 $coolRectangle->getArea();
 
-// Write a php class called Employee with methods called work() and getSalary(). Create a subclass called HRManager that overrides the work() method and adds a new method called addEmployee().
+// Write a php class called Employee with methods called work() and getSalary().
+//  Create a subclass called HRManager that overrides the work() method 
+// and adds a new method called addEmployee().
+
+class Employee{
+  protected $name;
+  protected $work;
+  protected $salaryPerHour;
+  protected $workHoursPerWeek;
+  public function __construct($name,$workHoursPerWeek,$salaryPerHour,$work)
+  {
+    $this->name = $name;
+    $this->workHoursPerWeek = $workHoursPerWeek;
+    $this->salaryPerHour = $salaryPerHour;
+    $this->work = $work;
+  }
+  public function work(){
+    echo "you work as ",$this->work ," with work hours ",$this->workHoursPerWeek,"per week <br>" ;
+  }
+
+  public function getSalary(){
+    echo "your salary is ", $this->salaryPerHour * $this->workHoursPerWeek, " this week <br>";
+  }
+}
+
+class HRManager extends Employee{
+  public function work(){
+    echo "congrats you are HR Manager now but you still work ",$this->workHoursPerWeek," per week <br>";
+  }
+
+  public function addEmployee($name,$workHoursPerWeek, $salaryPerHour, $work){
+    $newEmployee = new Employee($name, $workHoursPerWeek, $salaryPerHour, $work);
+    echo "you just hired a new employee with name ",$newEmployee->name, ", salary ",$newEmployee->salaryPerHour," per hour", ", work hours per week is ", $newEmployee->workHoursPerWeek, " hours and work as " ,$newEmployee->work, "<br>";
+  }
+}
+
+$mrHRManager = new HRManager("paul", 40, 100,"HR Manager");
+$mrHRManager->work();
+$mrHRManager->getSalary();
+$mrHRManager->addEmployee("jack",40,20,"cashier");
 
 // Write a php class known as "BankAccount" with methods called deposit() and withdraw(). Create a subclass called SavingsAccount that overrides the withdraw() method to prevent withdrawals if the account balance falls below one hundred.
 
