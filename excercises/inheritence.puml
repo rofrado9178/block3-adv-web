@@ -1,0 +1,11 @@
+@startuml Animal
+
+class Animal{
+  getSound()
+}
+
+class Cat extends Animal{
+  getSound()
+}
+
+@enduml

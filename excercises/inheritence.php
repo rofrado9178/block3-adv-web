@@ -103,7 +103,65 @@ $mrHRManager->work();
 $mrHRManager->getSalary();
 $mrHRManager->addEmployee("jack",40,20,"cashier");
 
-// Write a php class known as "BankAccount" with methods called deposit() and withdraw(). Create a subclass called SavingsAccount that overrides the withdraw() method to prevent withdrawals if the account balance falls below one hundred.
+// Write a php class known as "BankAccount" with methods called deposit() and withdraw(). 
+// Create a subclass called SavingsAccount that overrides the withdraw() 
+// method to prevent withdrawals if the account balance falls below one hundred.
+$bankId = 0;
+class BankAccount{
+  protected $balance;
+  protected $accountNumber;
+  protected $amount;
+  protected $accountOwner;
+
+  public function __construct($accountOwner, $balance=0){
+   global $bankId;
+   $bankId++;
+   $this->accountNumber = $bankId;
+   $this->accountOwner = $accountOwner;
+   $this->balance = $balance;
+  }
+
+  public function deposit($amount){
+    $this->balance += $amount;
+    echo "you deposit $amount$ your balance now is ", $this->balance, "<br>";
+  }
+
+  public function withdraw($amount){
+    if ($this->balance > $amount){
+      $this->balance -= $amount;
+      echo "You withdraw $amount$. Your current Balance is ", $this->balance, "<br>";
+      return;
+    }
+    echo " your dont have enough balance to do this withdrawal <br>";
+    return;
+  }
+
+  public function checkBalance(){
+    echo "Hello ",$this->accountOwner,  " your balance is ", $this->balance, "<br>";
+  }
+
+}
+
+class SavingAccount extends BankAccount{
+  public function withdraw($amount)
+  {
+    if($this->balance <= 100){
+      echo "you have balance less than 100$, you are not able to withdraw money <br>";
+      return;
+    }
+    parent::withdraw($amount);
+    return;
+  }
+}
+
+$jackAccount = new SavingAccount("Jack");
+$jackAccount->checkBalance();
+$jackAccount->deposit(150);
+// $jackAccount->deposit(150);
+// $jackAccount->withdraw(100);
+$jackAccount->withdraw(50);
+$jackAccount->checkBalance();
+
 
 // Write a php class called Animal with a method named move(). Create a subclass called Cheetah that overrides the move() method to run.
 
