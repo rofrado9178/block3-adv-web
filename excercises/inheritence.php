@@ -5,7 +5,7 @@
 
 class Animal{
   public function makeSound(){
-    echo "Groaaar";
+    echo "from animal : Groaaar";
   }
 }
 
@@ -19,9 +19,48 @@ class Cat extends Animal{
 $superMiaw = new Cat();
 $superMiaw->makeSound();
 
-// Write a php class called Vehicle with a method called drive(). Create a subclass called Car that overrides the drive() method to print "Repairing a car".
+// Write a php class called Vehicle with a method called drive(). 
+// Create a subclass called Car that overrides the drive() method to print "Repairing a car".
+class Vehicle{
+  public function drive(){
+    echo "start the engine, turn the transimition to drive and here we go!!";
+  }
+}
 
-// Write a php class called Shape with a method called getArea(). Create a subclass called Rectangle that overrides the getArea() method to calculate the area of a rectangle.
+class Car extends Vehicle {
+  public function drive(){
+    echo "Repairing a car <br>";
+  }
+}
+
+$BMW = new Car();
+$BMW->drive();
+
+// Write a php class called Shape with a method called getArea(). 
+// Create a subclass called Rectangle that overrides the getArea() method to calculate the area of a rectangle.
+
+class Shape{
+  protected $width;
+  protected $length;
+  public function __construct($width , $length)
+  {
+    $this->width = $width;
+    $this->length = $length;
+  }
+
+  public function getArea(){
+    echo "$this->width, $this->length";
+  }
+}
+
+class Rectangle extends Shape{
+  public function getArea(){
+    echo $this->width * $this->length;
+  }
+}
+
+$coolRectangle = new Rectangle(5,5);
+$coolRectangle->getArea();
 
 // Write a php class called Employee with methods called work() and getSalary(). Create a subclass called HRManager that overrides the work() method and adds a new method called addEmployee().
 
