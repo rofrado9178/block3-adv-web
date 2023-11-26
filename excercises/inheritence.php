@@ -457,6 +457,6 @@ echo $coolManager->manageProjects(9) . "<br>";
 echo $coolManager->get_name() . " " . "your bonus is ". $coolManager->calculateBonus() . "<br>";
 
 $coolProgrammer = new Programmer("Brownie", "Montreal", 200000, "Programmer");
-echo $coolProgrammer->manageProjects(1) . "<br>";
+echo $coolProgrammer->manageProjects(1  ) . "<br>";
 echo $coolProgrammer->get_name() . " " . "your bonus is ". $coolProgrammer->calculateBonus() . "<br>";
 ?>
