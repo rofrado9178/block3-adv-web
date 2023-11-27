@@ -1,0 +1,59 @@
+@startuml
+
+class Ingredients {
+
+- name
+- type
+- pricePerKg
+- supplierId
+
++__construct($name,$type,$pricePerKg, $supplierId)
+
+-changePrice()
+-changeSupplier()
+
+}
+
+class Suppliers{
+ 
++name
++address
++city
++province
++postalCode
+-contactPerson
+-contactNumber
+
++__constract($address, $city, $province, $contactPerson, contactNumber)
+
+-getSupplierInfo()
+
+}
+
+class Dishes{
++name
++price
++type
+
++__construct($name, $price, $type)
+
++getPrice()
+-updatePrice()
+
+
+
+}
+
+
+class DishIngredients {
+-dishId
+-ingredientId
+-quantityPerGram
+
++__construct($dishId, $ingredientId, $quantityPerGram)
+
+-calculatePrice()
+
+}
+
+@enduml
