@@ -39,3 +39,6 @@ INSERT INTO `Dish_Ingredient` (`id`, `dish_id`, `ingredient_id`, `qty`) VALUES (
 
 UPDATE `Dish_Ingredient` SET `ingredient_id` = '5', `qty` = '2' WHERE `Dish_Ingredient`.`id` = 4;
 
+-- JOIN TABLE QUERY 
+
+SELECT * FROM Dish_Ingredient JOIN Ingredient ON Dish_Ingredient.ingredient_id = Ingredient.ingredient_id JOIN Dish ON Dish_Ingredient.dish_id = Dish.dish_id WHERE Dish.dish_id = "2";
