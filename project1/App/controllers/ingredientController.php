@@ -1,22 +1,29 @@
 <?php 
 include_once 'models/ingredients.php';
+include_once 'models/suppliers.php';
 
 
 Class IngredientController{
   private $model;
-  public $ingredients; 
+  public $ingredients;
+  private $supplierModel;
+  public $suppliers; 
 
   public function __construct(){
     $this->model = new IngredientsModel();
+    $this->supplierModel = new SuppliersModel();
   }
 
   public function showIngredients(){
     $ingredients = $this->model->showAllIngredient();
     include("views/all-ingredients.php");
+   
   }
 
   public function inputIngredient(){
+    $suppliers = $this->supplierModel->showAllSuppliers();
     include("views/input-ingredient.php");
+    
   }
 
   public function addIngredient(){
@@ -32,11 +39,29 @@ Class IngredientController{
     }
     else if($this->model->insertIngredient($name,$type,$price_per_kg,$supplier_id)){
       echo "<p> Ingredient added : $name , $type , $price_per_kg $";
+     
     }
     else{
       echo "failed to input ingredient";
     }
+   
+     $this->showIngredients();
+
+  }
+
+  public function delete(){
+    $id = $_GET["delete"];
+    if(!$id){
+      echo "cannot delete data";
+      $this->showIngredients();
+      return;
+    }
+    $this->model->deleteIngredient($id);
+    echo "You just delete data with id =  $id";
     $this->showIngredients();
+  }
+
+  public function edit(){
 
   }
  
@@ -44,8 +69,13 @@ Class IngredientController{
 
 $ingredientController = new IngredientController();
 
-if(isset($_POST["submit"])){
+
+
+if(isset($_POST["add-ingredient"])){
   $ingredientController->addIngredient();
+}
+else if(isset($_GET["delete"])){
+  $ingredientController->delete();
 }
 else{
     $ingredientController->inputIngredient();
