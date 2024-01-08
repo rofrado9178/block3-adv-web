@@ -54,10 +54,10 @@ if(isset($_POST["add-dish"])){
 else if(isset($_GET["show-dish"])){
   $dishController->showDishes();
 }
-// else if(isset($_GET["delete"])){
+// else if(isset($_GET["delete-dish"])){
 //   $dishController->delete();
 // }
-// else if(isset($_POST["edit-ingredient"])){
+// else if(isset($_POST["edit-dish"])){
 //   $dishController->edit();
 // }
 else{

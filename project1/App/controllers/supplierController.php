@@ -58,10 +58,10 @@ if(isset($_POST["add-supplier"])){
 else if(isset($_GET["show-supplier"])){
   $supplierController->showSuppliers();
 }
-// else if(isset($_GET["delete"])){
+// else if(isset($_GET["delete-supplier"])){
 //   $supplierController->delete();
 // }
-// else if(isset($_POST["edit-ingredient"])){
+// else if(isset($_POST["edit-suplier"])){
 //   $supplierController->edit();
 // }
 else{
