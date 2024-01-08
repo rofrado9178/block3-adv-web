@@ -25,6 +25,34 @@ class SuppliersModel{
     return false;
   }
 
+public function insertSupplier($name,$address,$city,$province , $postal_code, $contact_person, $contact_number){
+    if($this->connect){
+      try{
+        
+        $stmt = $this->connect->prepare("INSERT INTO `Supplier` ( `name`, `address`, `city`, `province`, `postal_code`, `contact_person`, `contact_number`) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        $stmt->bindParam(1, $name, PDO::PARAM_STR);
+        $stmt->bindParam(2, $address, PDO::PARAM_STR);
+        $stmt->bindParam(3, $city, PDO::PARAM_STR);
+        $stmt->bindParam(4, $province,PDO::PARAM_STR);
+        $stmt->bindParam(5, $postal_code,PDO::PARAM_STR);
+        $stmt->bindParam(6, $contact_person,PDO::PARAM_STR);
+        $stmt->bindParam(7, $contact_number,PDO::PARAM_STR);
+        $stmt->execute();
+        $stmt = null;
+  
+  
+        return true;
+      }
+      catch(PDOException $e){
+        $error = "Connection Error";
+        $error .= $e->getMessage();
+        include("views/error.php");
+        exit();
+      }
+    }
+    return false;
+  }
+
 }
 
 // $model = new SuppliersModel();

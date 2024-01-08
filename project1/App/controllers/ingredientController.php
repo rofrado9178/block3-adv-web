@@ -22,8 +22,13 @@ Class IngredientController{
 
   public function inputIngredient(){
     $suppliers = $this->supplierModel->showAllSuppliers();
-    include("views/input-ingredient.php");
-    
+    include("views/input-ingredient.php"); 
+  }
+
+  public function editIngredient(){
+    $ingredients = $this->model->showAllIngredient();
+    $suppliers = $this->supplierModel->showAllSuppliers();
+    include("views/edit.php");
   }
 
   public function addIngredient(){
@@ -62,7 +67,25 @@ Class IngredientController{
   }
 
   public function edit(){
+    $name = $_POST['name'];
+    $type = $_POST['type'];
+    $price_per_kg = $_POST['price_per_kg'];
+    $supplier_id = $_POST['supplier_id'];
+    $id = $_POST['ingredient_id'];
 
+    if(!$id || !$name || !$type || !$price_per_kg || !$supplier_id){
+      echo "<p?> Missing Information </p>";
+      $this->editIngredient();
+      return;
+    }
+    else if($this->model->editIngredient($id,$name,$type,$price_per_kg,$supplier_id)){
+      echo "<p> Ingredient Updated : $name , $type , $price_per_kg $";
+      $this->showIngredients();
+    }
+    else{
+      echo "failed to update ingredient";
+    }
+   
   }
  
 }
@@ -71,14 +94,23 @@ $ingredientController = new IngredientController();
 
 
 
+
 if(isset($_POST["add-ingredient"])){
   $ingredientController->addIngredient();
+}
+else if(isset($_GET["show-ingredient"])){
+  $ingredientController->showIngredients();
 }
 else if(isset($_GET["delete"])){
   $ingredientController->delete();
 }
+else if(isset($_POST["edit-ingredient"])){
+  $ingredientController->edit();
+}
 else{
+
     $ingredientController->inputIngredient();
+    $ingredientController->editIngredient();
 }
 
 ?>

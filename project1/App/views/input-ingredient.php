@@ -1,3 +1,6 @@
+<a href="?show-ingredient">Show All Ingredients</a>
+<br>
+<h2>Input Ingredient</h2>
 <form method="POST">
     <input type="text" name="name" placeholder="Name" >
     <select name="type" id="">
@@ -19,3 +22,6 @@
     <input type="submit" name="add-ingredient" value="Submit">
     <input type="reset" name="reset" value="Reset">
 </form>
+
+
+
