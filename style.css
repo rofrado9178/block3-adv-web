@@ -1,0 +1,23 @@
+section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+a {
+  font-size: 30px;
+  text-decoration: none;
+  color: white;
+  transition: 0.5s;
+}
+
+a:hover {
+  color: green;
+}
+
+.cards {
+  padding: 80px 0;
+  text-align: center;
+  border-radius: 8px;
+  background-color: gray;
+}
