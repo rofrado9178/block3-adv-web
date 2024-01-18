@@ -1,4 +1,4 @@
-<a href="?show-ingredient">Show All Ingredients</a>
+<a href="?page=ingredient&show-ingredient">Show All Ingredients</a>
 <br>
 <h2>Input Ingredient</h2>
 <form method="POST">
@@ -19,6 +19,7 @@
         }
     echo "</select>";
     }?>
+   
     <input type="submit" value="Submit" name="add-ingredient">
     <input type="reset" name="reset" value="Reset">
 </form>

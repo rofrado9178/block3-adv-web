@@ -1,6 +1,6 @@
 <br>
 <br>
-<a href="?show-dish">Show All Dishes</a>
+<a href="?page=dish&show-dish">Show All Dishes</a>
 <br>
 <h2>Input Dish</h2>
 <form method="POST">

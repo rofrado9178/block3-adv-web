@@ -52,6 +52,8 @@ public function addSupplier(){
 
 $supplierController = new SupplierController();
 
+if(isset($_REQUEST['page']) && $_REQUEST['page'] === 'supplier'){
+
 if(isset($_POST["add-supplier"])){
   $supplierController->addSupplier();
 }
@@ -68,6 +70,7 @@ else{
 
     $supplierController->inputSupplier();
   
+}
 }
 
 

@@ -48,6 +48,8 @@ public function addDish(){
 
 $dishController = new DishController();
 
+if(isset($_REQUEST['page']) && $_REQUEST['page'] === 'dish'){
+
 if(isset($_POST["add-dish"])){
   $dishController->addDish();
 }
@@ -64,6 +66,8 @@ else{
 
     $dishController->inputDish();
   
+}
+
 }
 
 

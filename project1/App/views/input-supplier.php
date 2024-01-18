@@ -1,6 +1,6 @@
 <br>
 <br>
-<a href="?show-supplier">Show All Suppliers</a>
+<a href="?page=supplier&show-supplier">Show All Suppliers</a>
 <h2>Input Supplier</h2>
 <form method="POST">
     <input type="text" name="name" placeholder="Name" >

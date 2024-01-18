@@ -81,6 +81,8 @@ public function submitSpecificDishId(){
 
 $dishController = new DishIngredientsController();
 
+if(isset($_REQUEST['page']) && $_REQUEST['page'] === 'dish-ingredient'){
+
 if(isset($_POST["add-dishIngredient"])){
   $dishController->addDishIngredient();
 }
@@ -102,6 +104,8 @@ else{
     $dishController->inputDishIngredient();
     $dishController->selectAllSpecificDishIngredient();
   
+}
+
 }
 
 

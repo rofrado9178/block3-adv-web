@@ -92,26 +92,28 @@ Class IngredientController{
 
 $ingredientController = new IngredientController();
 
+if((isset($_REQUEST['page']) && $_REQUEST['page'] === 'ingredient') || isset($_REQUEST['delete'])){
 
 
+  if(isset($_POST["add-ingredient"])){
+    $ingredientController->addIngredient();
+  }
+  else if(isset($_GET["show-ingredient"])){
+    $ingredientController->showIngredients();
+  }
+  else if(isset($_GET["delete"])){
+    $ingredientController->delete();
+  }
+  else if(isset($_POST["edit-ingredient"])){
+    $ingredientController->edit();
+  }
+  else{
+  
+      $ingredientController->inputIngredient();
+      $ingredientController->editIngredient();
+  }
 
+}
 
-if(isset($_POST["add-ingredient"])){
-  $ingredientController->addIngredient();
-}
-else if(isset($_GET["show-ingredient"])){
-  $ingredientController->showIngredients();
-}
-else if(isset($_GET["delete"])){
-  $ingredientController->delete();
-}
-else if(isset($_POST["edit-ingredient"])){
-  $ingredientController->edit();
-}
-else{
-
-    $ingredientController->inputIngredient();
-    $ingredientController->editIngredient();
-}
 
 ?>

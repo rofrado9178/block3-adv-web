@@ -25,6 +25,7 @@
         }
     echo "</select>";
     }?>
+    <input type="number" name="price_per_kg" placeholder="new price">
     <input type="submit" name="edit-ingredient" value="Update">
     <input type="reset" name="reset" value="Reset">
 </form>

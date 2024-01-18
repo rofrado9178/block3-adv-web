@@ -1,6 +1,6 @@
 <br>
 <br>
-<a href="?show-dish-ingredients">Show All Dish Ingredients</a>
+<a href="?page=dish-ingredient&show-dish-ingredients">Show All Dish Ingredients</a>
 <br>
 <h2>Input Dish Ingredient</h2>
 <form method="POST">
