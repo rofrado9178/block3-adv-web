@@ -19,7 +19,7 @@
         }
     echo "</select>";
     }?>
-    <input type="submit" name="add-ingredient" value="Submit">
+    <input type="submit" value="Submit" name="add-ingredient">
     <input type="reset" name="reset" value="Reset">
 </form>
 

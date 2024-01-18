@@ -1,5 +1,5 @@
 <h2>Edit Ingredient</h2>
-<form method="POST">
+<form method="POST" >
      <?php if($ingredients){
     echo "<select name='ingredient_id'>";
         foreach($ingredients as $item){
@@ -16,7 +16,7 @@
         <option value="Fruit">Fruit</option>
         <option value="Dairy">Dairy</option>
     </select>
-    <input type="number" name="price_per_kg" placeholder="Price">
+    
     <?php if($suppliers){
     echo "<select name='supplier_id'>";
         foreach($suppliers as $supplier){
@@ -25,6 +25,6 @@
         }
     echo "</select>";
     }?>
-    <input type="submit" name="edit?" value="Update">
+    <input type="submit" name="edit-ingredient" value="Update">
     <input type="reset" name="reset" value="Reset">
 </form>

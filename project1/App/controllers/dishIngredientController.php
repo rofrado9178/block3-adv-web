@@ -45,7 +45,7 @@ public function addDishIngredient(){
     
 
     if(!$dish_id || !$ingredient_id ){
-      echo "<p?> Missing Information </p>";
+      echo "<p> Missing Information </p>";
       $this->inputDishIngredient();
       return;
     }

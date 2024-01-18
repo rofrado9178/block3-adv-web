@@ -95,6 +95,7 @@ $ingredientController = new IngredientController();
 
 
 
+
 if(isset($_POST["add-ingredient"])){
   $ingredientController->addIngredient();
 }
