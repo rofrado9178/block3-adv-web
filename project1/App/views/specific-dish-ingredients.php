@@ -1,6 +1,6 @@
-
+ <section>
   <?php 
-  
+ 
   if($ingredients){
 
   
@@ -20,4 +20,5 @@
 
   
   ?>
+  </section>
 <a href='../App/index.php'>Back</a>

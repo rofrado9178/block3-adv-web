@@ -1,5 +1,11 @@
+<br>
+<br>
 <a href="?page=ingredient&show-ingredient">Show All Ingredients</a>
 <br>
+<br>
+<section>
+
+
 <h2>Input Ingredient</h2>
 <form method="POST">
     <input type="text" name="name" placeholder="Name" >
@@ -24,5 +30,5 @@
     <input type="reset" name="reset" value="Reset">
 </form>
 
-
+</section>
 

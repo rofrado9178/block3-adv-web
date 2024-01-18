@@ -1,0 +1,40 @@
+body {
+  text-align: center;
+}
+
+main {
+  min-height: 90vh;
+}
+
+section {
+  padding: 40px 0;
+  background-color: aquamarine;
+  margin: 30px 0;
+}
+
+article {
+  padding: 20px;
+  width: 30%;
+  margin: 40px auto;
+  background-color: blanchedalmond;
+}
+
+a {
+  padding: 15px 30px;
+  text-decoration: none;
+  background-color: beige;
+  text-transform: capitalize;
+  color: black;
+  margin: 30px;
+  border: 1px black solid;
+  border-radius: 8px;
+  transition: 0.5s;
+}
+
+a:hover {
+  background-color: aquamarine;
+}
+
+footer {
+  margin-top: 40px;
+}

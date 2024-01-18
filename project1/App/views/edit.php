@@ -1,3 +1,6 @@
+<section>
+
+
 <h2>Edit Ingredient</h2>
 <form method="POST" >
      <?php if($ingredients){
@@ -29,3 +32,4 @@
     <input type="submit" name="edit-ingredient" value="Update">
     <input type="reset" name="reset" value="Reset">
 </form>
+</section>

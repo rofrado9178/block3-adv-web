@@ -2,6 +2,7 @@
 <br>
 <a href="?page=dish-ingredient&show-dish-ingredients">Show All Dish Ingredients</a>
 <br>
+<section>
 <h2>Input Dish Ingredient</h2>
 <form method="POST">
     <?php if($dishes){
@@ -23,3 +24,4 @@
     <input type="submit" name="add-dishIngredient" value="Submit">
     <input type="reset" name="reset" value="Reset">
 </form>
+</section>
